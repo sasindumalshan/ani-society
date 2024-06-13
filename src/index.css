@@ -1,0 +1,83 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+
+.nave-list {
+	@apply text-xl transition-all ease-in-out duration-300 hover:font-bold
+}
+
+body {
+	@apply bg-[#F9F5E4]
+}
+
+* {
+	font-family: 'Roboto', sans-serif;
+}
+
+/* width */
+::-webkit-scrollbar {
+	width: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+	background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+	background: #888;
+	border-radius: 5px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+	background: #555;
+}
+
+.text-input {
+	@apply
+	h-[30px]
+	w-[300px]
+	p-5
+	text-[20px]
+	rounded-md
+	border-2
+	border-slate-200
+	placeholder-slate-400
+	bg-[#E8E7E7]
+	ml-2
+	
+}
+
+
+.text-input-discription{
+	@apply
+	block
+	font-bold
+	text-slate-500
+}
+
+
+.hover-text {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	background-color: rgba(0, 0, 0, 0.7);
+	color: white;
+	padding: 5px 10px;
+	border-radius: 5px;
+	font-size: 12px;
+	pointer-events: none; /* Ensures the text doesn't interfere with the hover state */
+}
+/* @apply
+.ca{
+	animation: customAnimation duration-100 ease-in-out delay-0 infinite linear;
+}
+
+*/

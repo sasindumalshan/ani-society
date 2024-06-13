@@ -1,0 +1,99 @@
+[
+  {
+    "id": "A1",
+    "name": "Doge",
+    "available_status": "Available",
+    "description": "A friendly white dog looking for a loving home.",
+    "imgsrc": "/src/animal/white-dog.png",
+    "catcher_location": "Park",
+    "catcher_date": "2024-06-15",
+    "damage": "None",
+    "age": "2 years",
+    "category": "Dog"
+  },
+  {
+    "id": "A2",
+    "name": "Fluffy",
+    "available_status": "Available",
+    "description": "A fluffy cat with a playful attitude.",
+    "imgsrc": "/src/animal/white-dog.png",
+    "catcher_location": "Street",
+    "catcher_date": "2024-06-14",
+    "damage": "None",
+    "age": "1 year",
+    "category": "Cat"
+  },
+  {
+    "id": "A3",
+    "name": "Rex",
+    "available_status": "Not Available",
+    "description": "A strong and loyal dog, already adopted.",
+    "imgsrc": "/src/animal/white-dog.png",
+    "catcher_location": "Shelter",
+    "catcher_date": "2024-06-10",
+    "damage": "None",
+    "age": "3 years",
+    "category": "Dog"
+  },
+  {
+    "id": "A4",
+    "name": "Whiskers",
+    "available_status": "Available",
+    "description": "A playful kitten with a lot of energy.",
+    "imgsrc": "/src/animal/white-dog.png",
+    "catcher_location": "Home",
+    "catcher_date": "2024-06-12",
+    "damage": "None",
+    "age": "6 months",
+    "category": "Cat"
+  },
+  {
+    "id": "A5",
+    "name": "Bruno",
+    "available_status": "Available",
+    "description": "A friendly and well-behaved dog.",
+    "imgsrc": "/src/animal/white-dog.png",
+    "catcher_location": "Garden",
+    "catcher_date": "2024-06-16",
+    "damage": "None",
+    "age": "4 years",
+    "category": "Dog"
+  },
+  {
+    "id": "A6",
+    "name": "Mittens",
+    "available_status": "Not Available",
+    "description": "A cuddly cat already adopted by a loving family.",
+    "imgsrc": "/src/animal/white-dog.png",
+    "catcher_location": "Shelter",
+    "catcher_date": "2024-06-11",
+    "damage": "None",
+    "age": "2 years",
+    "category": "Cat"
+  },
+  {
+    "id": "A7",
+    "name": "",
+    "available_status": "Available",
+    "description": "A playful and energetic puppy.",
+    "imgsrc": "/src/animal/white-dog.png",
+    "catcher_location": "Street",
+    "catcher_date": "2024-06-13",
+    "damage": "None",
+    "age": "8 months",
+    "category": "Dog"
+  },
+  {
+    "id": "A8",
+    "name": "Smokey",
+    "available_status": "Available",
+    "description": "A mysterious and independent cat.",
+    "imgsrc": "/src/animal/white-dog.png",
+    "catcher_location": "Home",
+    "catcher_date": "2024-06-17",
+    "damage": "None",
+    "age": "3 years",
+    "category": "Cat"
+  }
+]
+
