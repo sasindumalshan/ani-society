@@ -5,6 +5,7 @@ const complaintSchema = new mongoose.Schema({
     street: { type: String, required: true },
     lane: { type: String, required: true },
     city: { type: String, required: true },
+    user: { type: String, required: true },
     description: { type: String, required: true },
     file: { type: String, required: true }
 });
