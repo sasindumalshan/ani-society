@@ -1,21 +1,21 @@
-import Footer from "./view/common/Footer/Footer"
-import Header from "./view/common/Header/Header"
 import MainContent from "./view/common/MainContent/MainContent"
-import Main from "./view/pages/Main/Main"
+import {AuthProvider} from "./connection/AuthContext";
 
 import './css.css'
 
-import { BrowserRouter } from "react-router-dom"
+import {BrowserRouter} from "react-router-dom"
 
 
 function App() {
-  return (
-    <BrowserRouter>
-      <Header/>
-      <MainContent/>
-      <Footer/>
-    </BrowserRouter>
-  )
+
+
+    return (
+        <AuthProvider>
+            <BrowserRouter>
+                <MainContent/>
+            </BrowserRouter>
+        </AuthProvider>
+    )
 }
 
 export default App

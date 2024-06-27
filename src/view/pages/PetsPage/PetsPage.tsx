@@ -2,6 +2,8 @@ import PetsCardGroup from "../PetsCardGroup/PetsCardGroup";
 import PetsHome from "../PetsHome/PetsHome";
 import {useState} from "react";
 import axios from "axios";
+import Header from "../../common/Header/Header";
+import Footer from "../../common/Footer/Footer";
 
 function PetsPage() {
 
@@ -43,6 +45,7 @@ function PetsPage() {
 	}
 
 	return (<>
+		<Header></Header>
 		<PetsHome
 			key={selected_count}
 			selected_count={selected_count}
@@ -53,6 +56,7 @@ function PetsPage() {
 		>
 		</PetsHome>
 		<PetsCardGroup increment_selected_count={increment_selected_count} setAnimalData={setAnimalData} />
+		<Footer></Footer>
 	</>)
 }
 

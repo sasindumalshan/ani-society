@@ -1,42 +1,54 @@
 import { Link  } from 'react-router-dom';
 import imgChooser from '/src/assets/image/img-chooser.png'
 import upload from '/src/image/upload.png'
+import { useNavigate } from 'react-router-dom';
 
 import '/src/index.css'
 import axios from "axios";
 
 function ComplaintFrom() {
+	const navigate = useNavigate();
 
 	const handleSubmit = async (event) => {
 		event.preventDefault();
-		const formData = new FormData(event.target);
-		const jsonData = {};
 
-		for (let [key, value] of formData.entries()) {
-			jsonData[key] = value;
+		if (localStorage.getItem('auth')==null){
+			navigate('/signin');
+		}else {
+			const formData = new FormData(event.target);
+			const jsonData = {};
+
+			for (let [key, value] of formData.entries()) {
+				jsonData[key] = value;
+			}
+
+			// Convert file to base64
+			const file = formData.get('file');
+			if (file) {
+				const base64 = await convertFileToBase64(file);
+				jsonData['file'] = base64;
+			}
+			var item:string ;
+			item= localStorage.getItem('auth') as string;
+			let user_name = JSON.parse(item).username;
+			jsonData['user'] = user_name;
+
+			try {
+				const response = await axios.post('http://localhost:3000/complaint/submit', jsonData);
+
+				console.log('Response:', response.data);
+				alert("Complained to Ani Society team")
+			} catch (error) {
+				console.error('Error:', error);
+				alert("Complained failed")
+			}
+
+			// Reset form fields
+			event.target.reset();
+
+			navigate('/')
 		}
 
-		// Convert file to base64
-		const file = formData.get('file');
-		if (file) {
-			const base64 = await convertFileToBase64(file);
-			jsonData['file'] = base64;
-		}
-
-		try {
-			const response = await axios.post('http://localhost:3000/complaint/submit', jsonData);
-
-			console.log('Response:', response.data);
-			alert("Complained to Ani Society team")
-		} catch (error) {
-			console.error('Error:', error);
-			alert("Complained failed")
-		}
-
-		// Reset form fields
-		event.target.reset();
-
-		// Navigate to another page
 	};
 
 	const convertFileToBase64 = (file) => {

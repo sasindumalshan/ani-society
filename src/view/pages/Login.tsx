@@ -1,6 +1,7 @@
 import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
 import axios from "axios";
+import {useAuth} from "../../connection/AuthContext";
 
 function Login() {
     const initialFormData = {
@@ -19,8 +20,12 @@ function Login() {
             [name]: value
         }));
     };
+        const [username, setUsername] = useState<string>('');
+        const [password, setPassword] = useState<string>('');
+        const { login } = useAuth();
 
-    const handleSubmit = (e) => {
+
+        const handleSubmit = (e) => {
         const obj = {
             username: formData.username,
             password: formData.password
@@ -32,6 +37,10 @@ function Login() {
                 console.log("Success:", response.data);
                 // Navigate to another page after successful login
                 navigate('/');
+                const { token } = response.data;
+                login(formData.username, token);
+
+
             })
             .catch(error => {
                 console.error("Error:", error);
