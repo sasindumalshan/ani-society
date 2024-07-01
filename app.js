@@ -50,6 +50,8 @@ app.post('/register', async (req, res) => {
 app.post('/login', async (req, res) => {
     const { username, password } = req.body;
 
+    console.log(password)
+
     try {
         const user = await User.findOne({ username });
         console.log(user)
@@ -60,6 +62,7 @@ app.post('/login', async (req, res) => {
 
         const isMatch = await bcrypt.compare(password, user.password);
         if (!isMatch) {
+            console.log("user 2")
             return res.status(400).json({ message: 'Invalid username or password' });
         }
 
@@ -105,6 +108,9 @@ app.use('/complaint', complaintRouter);
 
 const userRoutes = require('./router/users');
 app.use('/users', userRoutes);
+
+const paymentRoutes = require('./router/payment');
+app.use('/payment', paymentRoutes);
 
 // Start server
 app.listen(port, () => {

@@ -34,4 +34,30 @@ router.post('/', async (req, res) => {
     }
 });
 
+// GET route to retrieve animal orders with pagination
+router.get('/', async (req, res) => {
+    const page = parseInt(req.query.page) || 1;
+    const limit = parseInt(req.query.limit) || 10;
+
+    try {
+        const animalOrders = await AnimalOrder.find()
+            .skip((page - 1) * limit)
+            .limit(limit);
+
+        const totalOrders = await AnimalOrder.countDocuments();
+        const totalPages = Math.ceil(totalOrders / limit);
+
+        res.json({
+            animalOrders,
+            totalOrders,
+            totalPages,
+            currentPage: page,
+            perPage: limit
+        });
+    } catch (err) {
+        res.status(500).json({ message: err.message });
+    }
+});
+
+
 module.exports = router;
