@@ -58,7 +58,7 @@ function Complaint() {
 				</div>
 				<div className='w-[60%]'>
 					<h1 className='text-[35px] font-extrabold text-[#53524D] mb-5 mt-[5px]'>Complaint</h1>
-					<p className='ml-5 text-[20px]'>With Best Friends, you are working to save the lives of cats and dogs all across America, giving pets second chances and happy homes.</p>
+					<p className='ml-5 text-[20px]'>Animas Street is dedicated to advocating for the welfare and rights of street animals worldwide. We believe that every animal deserves compassion, care, and a chance to live a safe and healthy life. Through our platform, we raise awareness about the challenges faced by street animals, promote responsible pet ownership, and encourage adoption from shelters and rescue organizations. Our mission is to create a world where street animals are valued and protected, where communities come together to support their well-being, and where every animal has a loving home.</p>
 
 				</div>
 				<Outlet></Outlet>

@@ -17,8 +17,8 @@ function Main() {
                <>
                    <Header/>
                <Home/>
-                   <Outlet context={Register}></Outlet>
-                   <Outlet context={Login}></Outlet>
+                   {/*<Outlet context={Register}></Outlet>*/}
+                   {/*<Outlet context={Login}></Outlet>*/}
                <How/>
                <Pet/>
                <Complaint/>

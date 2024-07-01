@@ -98,7 +98,7 @@ function PetsHome({selected_count,selected_animals,removeAnimal,reset_selected_a
                         <h1 className='text-[95px] font-extrabold text-[#53524D] '>MY<span className='text-[45px] ml-6'>future pet</span>
                         </h1>
                         <p className='ml-5'>With Best Friends, you are working to save the lives of cats and dogs all
-                            across America, giving pets second chances and happy homes.</p>
+                            across Sri lanka, giving pets second chances and happy homes.</p>
                     </div>
                 </div>
             </section>

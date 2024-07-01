@@ -34,9 +34,20 @@ function Login() {
         e.preventDefault();
         axios.post("http://localhost:3000/login", obj)
             .then(response => {
-                console.log("Success:", response.data);
+                console.log("Success:", response.data.user.role);
                 // Navigate to another page after successful login
-                navigate('/');
+                try {
+                    if (response.data.user.role=='admin'){
+                        navigate('/admin/home');
+
+                        localStorage.setItem('role', 'admin');
+                    }else {
+                        navigate('/');
+                    }
+                }catch (e){
+                    navigate('/');
+                }
+
                 const { token } = response.data;
                 login(formData.username, token);
 
@@ -44,6 +55,7 @@ function Login() {
             })
             .catch(error => {
                 console.error("Error:", error);
+                alert(error.response.data.message)
             });
     };
 

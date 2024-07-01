@@ -11,7 +11,7 @@ function ComplaintFrom() {
 
 	const handleSubmit = async (event) => {
 		event.preventDefault();
-
+		console.log(localStorage.getItem('auth'))
 		if (localStorage.getItem('auth')==null){
 			navigate('/signin');
 		}else {
